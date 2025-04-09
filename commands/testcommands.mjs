@@ -13,6 +13,26 @@ const commands = [
         name: "whoami",
         description: "I will introduce myself."
     },
+    {
+        name: "suggest",
+        description: "Submit a suggestion to the Tech Guild",
+        options: [
+            {
+                name: "title",
+                description: "The title of your suggestion",
+                type: 3, // STRING type
+                required: true,
+                max_length: 100
+            },
+            {
+                name: "description",
+                description: "The detailed description of your suggestion",
+                type: 3, // STRING type
+                required: true,
+                max_length: 1000
+            }
+        ]
+    }
 ]
 
 const rest = new REST({version:"10"}).setToken(process.env.APP_TOKEN)
