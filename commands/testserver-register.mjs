@@ -20,14 +20,14 @@ const rest = new REST({version:"10"}).setToken(process.env.APP_TOKEN)
 const registerCommands = async (guildId) => {
     try {
         if (!process.env.BOT_ID) console.error("no bot id found.");
-        console.log('Started refreshing application (/) commands.');
+        console.log('Started refreshing application TEST (/) commands.');
 
         // await rest.put(Routes.applicationCommands(process.env.BOT_ID), { body: commands });
         await rest.put(
             Routes.applicationGuildCommands(process.env.BOT_ID, guildId),
             { body: commands }
         );
-        console.log('Successfully reloaded application (/) commands.');
+        console.log('Successfully reloaded application TEST (/) commands.');
     } catch (error) {
         console.error(error);
     }
