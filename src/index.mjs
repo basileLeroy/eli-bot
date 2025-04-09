@@ -26,10 +26,10 @@ eli.on(Events.InteractionCreate, async interaction => {
     if (interaction.commandName === 'ping') {
         const start = Date.now();
         await interaction.reply('Pinging...');
-        const latency = Date.now() - start;
+        const duration = Date.now() - start;
         const apiPing = interaction.client.ws.ping;
-    
-        await interaction.editReply(`🏓 Pong!\nLatency: ${latency}ms\nAPI Ping: ${apiPing}ms`);
+
+        await interaction.editReply(`🏓 Pong!\nDuration: ${duration}ms\nAPI Ping: ${apiPing}ms`);
     }
 
     if (interaction.commandName === 'whoami') {
