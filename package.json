@@ -1,0 +1,20 @@
+{
+  "name": "eli-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot for the Tech Guild with slash commands to create messages, notifications, and announcements",
+  "type": "module",
+  "main": "src/index.mjs",
+  "scripts": {
+    "dev" : "nodemon src/index.mjs"
+  },
+  "repository": "https://github.com/basileLeroy/eli-bot",
+  "author": "Basile Leroy",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
