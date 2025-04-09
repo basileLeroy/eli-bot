@@ -19,8 +19,6 @@ eli.on(Events.ClientReady, client => {
 eli.on(Events.InteractionCreate, async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
-    const start = Date.now();
-
     const guildName = interaction.guild?.name ?? "this server";
     const botMember = await interaction.guild?.members.fetchMe();
     const botDisplayName = botMember?.nickname || botMember?.user.username || "Eli";
