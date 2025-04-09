@@ -19,11 +19,20 @@ eli.on(Events.ClientReady, client => {
 eli.on(Events.InteractionCreate, async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
-    console.log(interaction);
+    const start = Date.now();
 
     const guildName = interaction.guild?.name ?? "this server";
     const botMember = await interaction.guild?.members.fetchMe();
     const botDisplayName = botMember?.nickname || botMember?.user.username || "Eli";
+
+    if (interaction.commandName === 'ping') {
+        const start = Date.now();
+        await interaction.reply('Pinging...');
+        const latency = Date.now() - start;
+        const apiPing = interaction.client.ws.ping;
+    
+        await interaction.editReply(`🏓 Pong!\nLatency: ${latency}ms\nAPI Ping: ${apiPing}ms`);
+    }
 
     if (interaction.commandName === 'whoami') {
         const embed = new EmbedBuilder()
