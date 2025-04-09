@@ -2,7 +2,7 @@ import { config } from "dotenv";
 import { REST, Routes } from "discord.js";
 config();
 
-const guildId = process.env.APP_MODE === "production" ? process.env.PROD_SERVER_ID : process.env.TEST_SERVER_ID;
+const guildId = process.env.PROD_SERVER_ID;
 
 const commands = [
     {
