@@ -4,6 +4,13 @@ config();
 async function handleAnnounce(interaction) {
     const modRoleId = process.env.ROLE_MODERATOR;
 
+    if(!modRoleId) {
+        return interaction.reply({
+            content: "❌ An error occurred: failed to fetch role ID.",
+            ephemeral: true
+        });
+    }
+
     // Check permissions
     if (!interaction.member.roles.cache.has(modRoleId)) {
         return interaction.reply({
