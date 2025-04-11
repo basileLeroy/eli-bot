@@ -32,7 +32,52 @@ const commands = [
                 max_length: 1000
             }
         ]
-    }
+    },
+    {
+        name: "report",
+        description: "Report a message to the moderators",
+        options: [
+            {
+                name: "message_link",
+                description: "Copy the link of the message you want to report.",
+                type: 3, // STRING type
+                required: true,
+                max_length: 500
+            },
+            {
+                name: "reason",
+                description: "Why are you reporting this message?",
+                type: 3, // STRING type
+                required: true,
+                max_length: 1000
+            }
+        ]
+    },
+    {
+        name: "announce",
+        description: "Send an announcement to a channel (moderators only)",
+        options: [
+            {
+                name: "target_role",
+                description: "The role to mention in the announcement",
+                type: 8, // ROLE
+                required: true
+            },
+            {
+                name: "target_channel",
+                description: "The channel to send the announcement to",
+                type: 7, // CHANNEL
+                required: true
+            },
+            {
+                name: "message",
+                description: "The content of the announcement",
+                type: 3, // STRING
+                required: true,
+                max_length: 2000
+            }
+        ]
+    },
 ]
 
 const rest = new REST({version:"10"}).setToken(process.env.APP_TOKEN)
